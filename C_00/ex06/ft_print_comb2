@@ -1,0 +1,35 @@
+#include<unistd.h>
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+void	out(int n)
+{
+	ft_putchar(n/10+'0');
+	ft_putchar(n%10+'0');
+}
+void	ft_print_comb2(void)
+{
+	int a;
+	int b;
+	
+	a = 0;
+	while ( a <= 99)
+		{
+			b = a + 1;
+			while( b <= 99)
+				{
+					out(a);
+					ft_putchar(' ');
+					out(b);
+					ft_putchar(',');
+					b++;
+				}
+	    	a++;
+		}
+}	
+int	main(void)
+{
+	ft_print_comb2();
+	return 0;
+}
